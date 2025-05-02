@@ -1,12 +1,8 @@
 from src.app import app
 from src.routes.userRoutes import user_blp
-from flask import Flask, render_template, request, redirect, url_for, jsonify, make_response
-
-from werkzeug.security import generate_password_hash, check_password_hash
-import jwt
-import uuid
-from datetime import datetime, timezone, timedelta
-from functools import wraps
+from src.routes.taskRoutes import task_blp
+from dotenv import load_dotenv
+import os
 
 
 @app.route('/')
@@ -14,8 +10,11 @@ def hello_world():
     return 'Hello, World!'
 
 app.register_blueprint(user_blp)
+app.register_blueprint(task_blp)
 
-app.config['secret_key'] = 'your_secret_key'  # Change this to a random secret key
+load_dotenv()  # Load environment variables from a .env file
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')  # Retrieve the secret key from the .env file
+print("Secret Key:", app.config['SECRET_KEY'])  # Print the secret key for debugging purposes
 
 
 if __name__ == '__main__':
