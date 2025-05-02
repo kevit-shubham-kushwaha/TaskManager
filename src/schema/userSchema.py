@@ -1,4 +1,4 @@
-from marshmallow import Schema, fields, validate, post_load
+from marshmallow import Schema, fields, validate
 
 
 class UserSchema(Schema):
@@ -8,11 +8,6 @@ class UserSchema(Schema):
     password = fields.Str(required=True, load_only=True, validate=validate.Length(min=6))
     user_role = fields.Str(required=True, validate=validate.OneOf(['admin', 'student']))
 
-
-    # @post_load
-    # def make_user(self, data, **kwargs):
-    #     from src.models.user import User
-    #     return User(**data)
 
 class UserLoginSchema(Schema):
     email = fields.Email(required=True)
