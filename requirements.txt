@@ -2,3 +2,6 @@ Flask
 flask-smorest
 marshmallow
 python-dotenv
+pymongo
+Werkzeug 
+PyJWT
