@@ -11,3 +11,9 @@ venv/
 # Python cache
 __pycache__/
 *.py[cod]
+
+base_repository.py
+db.py
+repository.py
+
+helpers/
