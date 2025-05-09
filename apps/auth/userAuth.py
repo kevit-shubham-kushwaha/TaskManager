@@ -1,11 +1,11 @@
 import jwt
 from functools import wraps
 from flask import request, jsonify
-from src.database import db
+from database import db
 from bson import ObjectId
 from flask import g
 
-from src.app import app
+# from app import app
 
 def token_required(f):
     @wraps(f)
@@ -16,7 +16,7 @@ def token_required(f):
             return jsonify({'message': 'Token is missing!'}), 401
 
         try:
-            secret = app.config['SECRET_KEY']
+            secret = "your_secret_key"  # Replace with your actual secret key
             data = jwt.decode(token, secret, algorithms=["HS256"])
             public_id = data['public_id']
             try:
@@ -35,7 +35,7 @@ def token_required(f):
         return f(*args, **kwargs)
 
     return decorated
-
+#adding some data
 def check_admin(f):
     @wraps(f)
     def decorated(*args, **kwargs):
@@ -44,9 +44,9 @@ def check_admin(f):
             return jsonify({'message': 'Token is missing!'}), 401
         
         try:
-            secret = app.config['SECRET_KEY']  # Replace with your actual secret key
-            data = jwt.decode(token, secret, algorithms=["HS256"])
-            public_id = data.get('public_id')
+            secret = 'your_secret_key'  # Replace with your actual secret key
+            jwt_decoded_data = jwt.decode(token, secret, algorithms=["HS256"])
+            public_id = jwt_decoded_data.get('public_id')
             
             if not public_id:
                 return jsonify({'message': 'Public ID not found in token'}), 400

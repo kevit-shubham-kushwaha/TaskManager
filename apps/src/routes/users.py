@@ -8,10 +8,13 @@ from bson import ObjectId
 from bson.errors import InvalidId
 
 
-from src.database import db
-from src.schema.userSchema import UserSchema as USchema ,UserLoginSchema
-from src.auth.userAuth import token_required, check_admin
-from src.app import app
+from database import db
+from schema.users import UserSchema as USchema, UserLoginSchema
+from auth.userAuth import token_required, check_admin
+from libs.utils.config import (
+    YOUR_SECRET_KEY
+)
+# from app import app
 
 user_blp = Blueprint("users", __name__, description="Operations on users")
 
@@ -123,7 +126,7 @@ class UserAuthRoute(MethodView):
                 if not (user['password'] == password):
                     return jsonify({'message': 'Invalid password'}), 401
             
-                token = jwt.encode({'public_id': str(user['_id']), 'exp': datetime.utcnow() + timedelta(minutes=30)}, app.config['SECRET_KEY'])
+                token = jwt.encode({'public_id': str(user['_id']), 'exp': datetime.utcnow() + timedelta(minutes=30)}, YOUR_SECRET_KEY)
                 
                 db.user_db.update_one({'_id': user['_id']}, {'$set': {'token': token}})
                 

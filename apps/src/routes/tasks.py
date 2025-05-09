@@ -7,10 +7,14 @@ from bson import ObjectId
 from bson.errors import InvalidId
 from datetime import datetime, date
 
-from src.schema.taskSchema import TaskSchema
-from src.routes.userRoutes import token_required, check_admin
-from src.database import db
-from src.app import app
+from schema.tasks import TaskSchema
+from auth.userAuth import token_required, check_admin
+from database import db
+from libs.utils.config import (
+    YOUR_SECRET_KEY
+)
+# from app import app
+
 
 task_blp = Blueprint("tasks", __name__, description="Operations on tasks")
 
@@ -38,7 +42,7 @@ class TaskRoutes(MethodView):
     def post(self, data):
         try:
             # Token already validated by @token_required and user set in g
-            current_user = current_user = g.current_user
+            current_user = g.current_user
             if not current_user:
                 return jsonify({'message': 'Authentication failed'}), 401
 
@@ -126,7 +130,7 @@ class UserTask(MethodView):
         return jsonify({'message': 'Please Log in to see your tasks!'}), 401
       
     try:
-        data = jwt.decode(token, app.config['SECRET_KEY'], algorithms=["HS256"])
+        data = jwt.decode(token, YOUR_SECRET_KEY, algorithms=["HS256"])
         public_id = data.get('public_id')
             
         if not public_id:
