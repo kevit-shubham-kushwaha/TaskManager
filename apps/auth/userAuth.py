@@ -1,7 +1,7 @@
 import jwt
 from functools import wraps
 from flask import request, jsonify
-from database import db
+from database.repository import flask_user_repository
 from bson import ObjectId
 from flask import g
 
@@ -24,7 +24,7 @@ def token_required(f):
             except Exception as e:
                 return jsonify({'message': 'Invalid public_id format'}), 400
 
-            current_user = db.user_db.find_one({"_id": object_id})  
+            current_user = flask_user_repository.find_one({"_id": object_id})  
             
             if not current_user:
                 return jsonify({'message': "user not found"}), 404
@@ -56,7 +56,7 @@ def check_admin(f):
             except Exception as e:
                 return jsonify({'message': 'Invalid public_id format'}), 400
 
-            current_user = db.user_db.find_one({"_id": object_id})  
+            current_user = flask_user_repository.find_one({"_id": object_id})  
             
             if not current_user:
                 return jsonify({'message': "User not found"}), 404
