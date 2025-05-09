@@ -23,8 +23,7 @@ app.register_blueprint(user_blp)
 app.register_blueprint(task_blp)
 
 load_dotenv()  # Load environment variables from a .env file
-app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')  # Retrieve the secret key from the .env file
-print("Secret Key:", app.config['SECRET_KEY'])  # Print the secret key for debugging purposes
+
 
 
 if __name__ == '__main__':

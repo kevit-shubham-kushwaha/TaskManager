@@ -9,7 +9,7 @@ from datetime import datetime, date
 
 from schema.tasks import TaskSchema
 from auth.userAuth import token_required, check_admin
-from database import db
+from database.repository import flask_user_repository, flask_task_repository
 from libs.utils.config import (
     YOUR_SECRET_KEY
 )
@@ -24,12 +24,13 @@ class TaskRoutes(MethodView):
     @token_required
     @task_blp.response(200, TaskSchema(many=True))
     def get(self):
-          tasks = db.task_db.find({})
+          tasks = flask_task_repository.find_many({})
           tasks_list = []
           if not tasks:
                 return jsonify({"message": "No tasks found"}), 404
-              
+         
           for task in tasks:
+                
                 task['_id'] = str(task['_id'])
                 tasks_list.append(task)
               
@@ -55,20 +56,20 @@ class TaskRoutes(MethodView):
             if not assigned_email:
                 return jsonify({"message": "assigned_to field is required"}), 400
 
-            user_emails = db.user_db.distinct("email")
+            user_emails = flask_user_repository.distinct("email")
             if assigned_email not in user_emails:
                 return jsonify({"message": "Please provide a valid user email to assign the task"}), 404
             
-            # Ensure due_date is a full datetime object
+            
             if isinstance(data['due_date'], date):
                 data['due_date'] = datetime.combine(data['due_date'], datetime.min.time())
 
-            # Set created_by from the current authenticated user
+            
             data['created_by'] = current_user['email']
             
-            # Insert the task
-            result = db.task_db.insert_one(data)
-            db.user_db.update_one({"email": assigned_email}, {"$push": {"tasks": str(result.inserted_id)}})
+            
+            result = flask_task_repository.insert_one(data)
+            flask_user_repository.update_one({"email": assigned_email}, {"$push": {"tasks": str(result.inserted_id)}})
             data['_id'] = str(result.inserted_id)
 
             return jsonify(data), 201
@@ -78,7 +79,6 @@ class TaskRoutes(MethodView):
         except jwt.InvalidTokenError:
             return jsonify({'message': 'Invalid token'}), 401
         except Exception as e:
-            # print("Unexpected error:", e)
             return jsonify({"message": "Internal server error", "error": str(e)}), 500
 
 
@@ -98,9 +98,9 @@ class TaskRoutesSpecific(MethodView):
         if isinstance(data.get('due_date'), date):
             data['due_date'] = datetime.combine(data['due_date'], datetime.min.time())
         try:
-            db.task_db.update_one({"_id": object_id}, {"$set": data})
+            flask_task_repository.update_one({"_id": object_id}, {"$set": data})
             
-            task_result = db.task_db.find_one({"_id": object_id})
+            task_result = flask_task_repository.find_one({"_id": object_id})
             task_result['_id'] = str(task_result['_id'])
             
             return jsonify(task_result), 200
@@ -110,7 +110,7 @@ class TaskRoutesSpecific(MethodView):
     def delete(self, task_id):
         try:
             object_id = ObjectId(task_id)
-            result = db.task_db.delete_one({"_id": object_id})
+            result = flask_task_repository.delete_one({"_id": object_id})
         
             if result.deleted_count == 0:
               return jsonify({"message": "Task not found"}), 404
@@ -140,16 +140,14 @@ class UserTask(MethodView):
                 object_id = ObjectId(public_id)
         except Exception as e:
                 return jsonify({'message': 'Invalid public_id format'}), 400
-              
-        current_user = db.user_db.find_one({"_id": object_id})   
+        print("Object ID:", object_id)    
+        current_user = flask_user_repository.find_one({"_id": object_id})   
         
         if not current_user:
             return jsonify({'message': 'User not found!'}), 404
         
-        tasks = db.task_db.find({"assigned_to": current_user['email']})
+        tasks = flask_task_repository.find_many({"assigned_to": current_user['email']})
         
-        # if not tasks:
-        #     return jsonify({"message": "No tasks found"}), 404
         
         tasks_list = []
         for task in tasks:
