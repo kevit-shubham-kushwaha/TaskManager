@@ -8,7 +8,6 @@ from bson import ObjectId
 from bson.errors import InvalidId
 
 
-
 from database.repository import flask_user_repository, flask_task_repository
 from schema.users import UserSchema as USchema, UserLoginSchema
 from auth.userAuth import token_required, check_admin
@@ -47,9 +46,9 @@ class UserRoutes(MethodView):
            return jsonify({"message": "No input data provided"}), 400
         try:
 
+
             user_email = post_data.get('email')
             if flask_user_repository.find_one({"email": user_email}):
-
                 return jsonify({"message": "User already exists"}), 400
             
             created_at = datetime.utcnow()
@@ -62,6 +61,7 @@ class UserRoutes(MethodView):
 
             user = flask_user_repository.insert_one(post_data)
             post_data['_id'] = str(user.inserted_id) 
+
 
             
             return jsonify(post_data), 201

@@ -1,9 +1,10 @@
 from pymongo import MongoClient
-from libs.utils.config import (
-    MONGODB_URI,
-    MONGODB_COLLECTION
-)
 
+from libs.utils.config.config import (
+    MONGODB_URI,
+    MONGODB_COLLECTION,
+
+)
 
 def connect_db(db_name:str):
   

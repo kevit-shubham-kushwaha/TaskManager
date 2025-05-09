@@ -9,12 +9,23 @@ from datetime import datetime, date
 
 from schema.tasks import TaskSchema
 from auth.userAuth import token_required, check_admin
+<<<<<<< HEAD
+from database.repository import flask_task_repository, flask_user_repository
+from libs.utils.config.config import (
+=======
 from database.repository import flask_user_repository, flask_task_repository
 from libs.utils.config import (
+>>>>>>> 86e96df62a5fe6d04cdae2e05f31c2eb3e7258a2
     YOUR_SECRET_KEY
 )
 # from app import app
+from libs.utils.logger.app_logger import logging
 
+<<<<<<< HEAD
+from libs.utils.logger.app_logger import logger
+
+=======
+>>>>>>> 86e96df62a5fe6d04cdae2e05f31c2eb3e7258a2
 task_blp = Blueprint("tasks", __name__, description="Operations on tasks")
 
 @task_blp.route("/tasks", methods=["GET", "POST"])
@@ -23,6 +34,12 @@ class TaskRoutes(MethodView):
     @token_required
     @task_blp.response(200, TaskSchema(many=True))
     def get(self):
+<<<<<<< HEAD
+          
+          
+          logger.info(f"Received request: {request.json}")
+=======
+>>>>>>> 86e96df62a5fe6d04cdae2e05f31c2eb3e7258a2
           tasks = flask_task_repository.find_many({})
           tasks_list = []
           if not tasks:
@@ -66,6 +83,10 @@ class TaskRoutes(MethodView):
             
             data['created_by'] = current_user['email']
             
+<<<<<<< HEAD
+            # Insert the task
+=======
+>>>>>>> 86e96df62a5fe6d04cdae2e05f31c2eb3e7258a2
             result = flask_task_repository.insert_one(data)
             flask_user_repository.update_one({"email": assigned_email}, {"$push": {"tasks": str(result.inserted_id)}})
             data['_id'] = str(result.inserted_id)
@@ -123,6 +144,7 @@ class UserTask(MethodView):
   
   @task_blp.response(200, TaskSchema(many=True))
   def get(self):
+    logger.info(f"Received request: {request.json}")
     token = request.headers.get('Authorization')
     if not token:
         return jsonify({'message': 'Please Log in to see your tasks!'}), 401
@@ -138,14 +160,22 @@ class UserTask(MethodView):
                 object_id = ObjectId(public_id)
         except Exception as e:
                 return jsonify({'message': 'Invalid public_id format'}), 400
+<<<<<<< HEAD
+              
+=======
 
+>>>>>>> 86e96df62a5fe6d04cdae2e05f31c2eb3e7258a2
         current_user = flask_user_repository.find_one({"_id": object_id})   
         
         if not current_user:
             return jsonify({'message': 'User not found!'}), 404
         
+<<<<<<< HEAD
+        tasks = flask_task_repository.find({"assigned_to": current_user['email']})
+=======
         tasks = flask_task_repository.find_many({"assigned_to": current_user['email']})
         
+>>>>>>> 86e96df62a5fe6d04cdae2e05f31c2eb3e7258a2
         
         tasks_list = []
         for task in tasks:
