@@ -35,7 +35,7 @@ def token_required(f):
         return f(*args, **kwargs)
 
     return decorated
-
+#adding some data
 def check_admin(f):
     @wraps(f)
     def decorated(*args, **kwargs):
@@ -45,8 +45,8 @@ def check_admin(f):
         
         try:
             secret = 'your_secret_key'  # Replace with your actual secret key
-            data = jwt.decode(token, secret, algorithms=["HS256"])
-            public_id = data.get('public_id')
+            jwt_decoded_data = jwt.decode(token, secret, algorithms=["HS256"])
+            public_id = jwt_decoded_data.get('public_id')
             
             if not public_id:
                 return jsonify({'message': 'Public ID not found in token'}), 400
