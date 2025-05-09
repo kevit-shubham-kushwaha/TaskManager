@@ -8,7 +8,8 @@ from bson import ObjectId
 from bson.errors import InvalidId
 
 
-from database.repository import flask_user_repository
+
+from database.repository import flask_user_repository, flask_task_repository
 from schema.users import UserSchema as USchema, UserLoginSchema
 from auth.userAuth import token_required, check_admin
 
@@ -40,26 +41,30 @@ class UserRoutes(MethodView):
     @token_required
     @user_blp.arguments(USchema)
     @user_blp.response(201, USchema)
-    def post(self,data):
+    def post(self,post_data):
        
-        if not data:
+        if not post_data:
            return jsonify({"message": "No input data provided"}), 400
         try:
-            
-            if flask_user_repository.find_one({"email": data.get('email')}):
+
+            user_email = post_data.get('email')
+            if flask_user_repository.find_one({"email": user_email}):
+
                 return jsonify({"message": "User already exists"}), 400
             
             created_at = datetime.utcnow()
-            data['created_at'] = created_at
+            post_data['created_at'] = created_at
             
-            plain_password = data.get('password')
+            plain_password = post_data.get('password')
             hashed_password = generate_password_hash(plain_password)
-            data['password'] = hashed_password
+            post_data['password'] = hashed_password
             
-            user = flask_user_repository.insert_one(data)
-            data['_id'] = str(user.inserted_id) 
+
+            user = flask_user_repository.insert_one(post_data)
+            post_data['_id'] = str(user.inserted_id) 
+
             
-            return jsonify(data), 201
+            return jsonify(post_data), 201
         
         except Exception as e: 
             return jsonify({"message": str(e)}), 500
@@ -131,7 +136,7 @@ class UserAuthRoute(MethodView):
                 
                 flask_user_repository.update_one({'_id': user['_id']}, {'$set': {'token': token}})
                 
-                return jsonify({'token': token}), 200
+                return jsonify({'token': token}), 200 
         except Exception as e:
          
             return jsonify({"message": str(e)}), 500

@@ -22,8 +22,6 @@ def hello_world():
 app.register_blueprint(user_blp)
 app.register_blueprint(task_blp)
 
-load_dotenv()  # Load environment variables from a .env file
-
 
 if __name__ == '__main__':
     app.run(debug=False, use_reloader=False)

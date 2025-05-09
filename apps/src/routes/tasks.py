@@ -15,7 +15,6 @@ from libs.utils.config import (
 )
 # from app import app
 
-
 task_blp = Blueprint("tasks", __name__, description="Operations on tasks")
 
 @task_blp.route("/tasks", methods=["GET", "POST"])
@@ -28,8 +27,9 @@ class TaskRoutes(MethodView):
           tasks_list = []
           if not tasks:
                 return jsonify({"message": "No tasks found"}), 404
-              
+         
           for task in tasks:
+                
                 task['_id'] = str(task['_id'])
                 tasks_list.append(task)
               
@@ -59,14 +59,13 @@ class TaskRoutes(MethodView):
             if assigned_email not in user_emails:
                 return jsonify({"message": "Please provide a valid user email to assign the task"}), 404
             
-            # Ensure due_date is a full datetime object
+            
             if isinstance(data['due_date'], date):
                 data['due_date'] = datetime.combine(data['due_date'], datetime.min.time())
 
-            # Set created_by from the current authenticated user
+            
             data['created_by'] = current_user['email']
             
-            # Insert the task
             result = flask_task_repository.insert_one(data)
             flask_user_repository.update_one({"email": assigned_email}, {"$push": {"tasks": str(result.inserted_id)}})
             data['_id'] = str(result.inserted_id)
@@ -78,7 +77,6 @@ class TaskRoutes(MethodView):
         except jwt.InvalidTokenError:
             return jsonify({'message': 'Invalid token'}), 401
         except Exception as e:
-            # print("Unexpected error:", e)
             return jsonify({"message": "Internal server error", "error": str(e)}), 500
 
 
@@ -140,7 +138,7 @@ class UserTask(MethodView):
                 object_id = ObjectId(public_id)
         except Exception as e:
                 return jsonify({'message': 'Invalid public_id format'}), 400
-              
+
         current_user = flask_user_repository.find_one({"_id": object_id})   
         
         if not current_user:
@@ -148,8 +146,6 @@ class UserTask(MethodView):
         
         tasks = flask_task_repository.find_many({"assigned_to": current_user['email']})
         
-        # if not tasks:
-        #     return jsonify({"message": "No tasks found"}), 404
         
         tasks_list = []
         for task in tasks:
