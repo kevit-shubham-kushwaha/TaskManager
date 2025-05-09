@@ -1,0 +1,72 @@
+2025-05-09 17:27:48,506 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-09 17:27:48,507 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-09 17:31:17,381 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-09 17:31:17,381 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-09 17:31:58,720 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-09 17:31:58,720 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-09 17:32:22,920 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-09 17:32:22,920 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-09 17:32:43,763 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-09 17:32:43,763 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-09 17:39:43,960 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-09 17:39:43,960 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-09 17:40:25,895 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-09 17:40:25,895 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-09 17:40:29,407 - INFO - 127.0.0.1 - - [09/May/2025 17:40:29] "GET / HTTP/1.1" 200 -
+2025-05-09 17:40:29,948 - INFO - 127.0.0.1 - - [09/May/2025 17:40:29] "GET / HTTP/1.1" 200 -
+2025-05-09 17:40:30,253 - INFO - 127.0.0.1 - - [09/May/2025 17:40:30] "GET / HTTP/1.1" 200 -
+2025-05-09 17:40:30,436 - INFO - 127.0.0.1 - - [09/May/2025 17:40:30] "GET / HTTP/1.1" 200 -
+2025-05-09 17:40:30,605 - INFO - 127.0.0.1 - - [09/May/2025 17:40:30] "GET / HTTP/1.1" 200 -
+2025-05-09 17:41:18,062 - INFO - 127.0.0.1 - - [09/May/2025 17:41:18] "GET / HTTP/1.1" 200 -
+2025-05-09 17:41:41,032 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-09 17:41:41,032 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-09 17:42:26,518 - INFO - 127.0.0.1 - - [09/May/2025 17:42:26] "[31m[1mGET /tasks HTTP/1.1[0m" 401 -
+2025-05-09 17:59:01,151 - DEBUG - test
+2025-05-09 17:59:01,165 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-09 17:59:01,166 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-09 17:59:26,192 - INFO - 127.0.0.1 - - [09/May/2025 17:59:26] "[31m[1mGET /tasks HTTP/1.1[0m" 401 -
+2025-05-09 17:59:32,426 - INFO - 127.0.0.1 - - [09/May/2025 17:59:32] "POST /auth HTTP/1.1" 200 -
+2025-05-09 18:01:22,673 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-09 18:01:22,673 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-09 18:01:28,947 - INFO - 127.0.0.1 - - [09/May/2025 18:01:28] "POST /auth HTTP/1.1" 200 -
+2025-05-09 18:07:33,990 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-09 18:07:33,990 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-09 18:24:24,995 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-09 18:24:24,995 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-09 18:24:36,913 - INFO - 127.0.0.1 - - [09/May/2025 18:24:36] "POST /auth HTTP/1.1" 200 -
+2025-05-09 18:24:56,928 - INFO - 127.0.0.1 - - [09/May/2025 18:24:56] "POST /auth HTTP/1.1" 200 -
+2025-05-09 18:25:09,538 - INFO - 127.0.0.1 - - [09/May/2025 18:25:09] "[31m[1mGET /users HTTP/1.1[0m" 403 -
+2025-05-09 18:25:36,268 - INFO - 127.0.0.1 - - [09/May/2025 18:25:36] "GET /tasks HTTP/1.1" 200 -
+2025-05-09 18:25:59,595 - INFO - 127.0.0.1 - - [09/May/2025 18:25:59] "[31m[1mGET /users HTTP/1.1[0m" 403 -
+2025-05-09 18:26:46,303 - INFO - 127.0.0.1 - - [09/May/2025 18:26:46] "[31m[1mPOST /auth HTTP/1.1[0m" 401 -
+2025-05-09 18:26:55,534 - INFO - 127.0.0.1 - - [09/May/2025 18:26:55] "POST /auth HTTP/1.1" 200 -
+2025-05-09 18:27:09,095 - INFO - 127.0.0.1 - - [09/May/2025 18:27:09] "GET /users HTTP/1.1" 200 -
+2025-05-09 18:29:09,753 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-09 18:29:09,753 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-09 18:29:12,613 - INFO - 127.0.0.1 - - [09/May/2025 18:29:12] "GET /users HTTP/1.1" 200 -
+2025-05-09 18:33:43,215 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-09 18:33:43,215 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-09 18:33:50,866 - INFO - 127.0.0.1 - - [09/May/2025 18:33:50] "GET /users HTTP/1.1" 200 -
+2025-05-09 18:34:01,735 - INFO - 127.0.0.1 - - [09/May/2025 18:34:01] "GET /users HTTP/1.1" 200 -
+2025-05-09 18:34:15,232 - INFO - 127.0.0.1 - - [09/May/2025 18:34:15] "GET /users HTTP/1.1" 200 -
+2025-05-09 18:34:18,505 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-09 18:34:18,505 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-09 18:34:20,924 - INFO - 127.0.0.1 - - [09/May/2025 18:34:20] "GET /users HTTP/1.1" 200 -
+2025-05-09 19:19:33,476 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-09 19:19:33,476 - INFO - [33mPress CTRL+C to quit[0m

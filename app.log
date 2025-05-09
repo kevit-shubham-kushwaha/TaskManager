@@ -1,0 +1,135 @@
+2025-05-09 17:14:46,479 - INFO - This is an info message.
+2025-05-09 17:14:46,479 - WARNING - This is a warning message.
+2025-05-09 17:14:46,480 - ERROR - This is an error message.
+2025-05-09 17:14:46,480 - INFO - Logging with rotation!
+2025-05-09 17:27:36,676 - INFO - This is an info message.
+2025-05-09 17:27:36,676 - WARNING - This is a warning message.
+2025-05-09 17:27:36,676 - ERROR - This is an error message.
+2025-05-09 17:27:36,676 - INFO - Logging with rotation!
+2025-05-09 17:27:48,357 - INFO - This is an info message.
+2025-05-09 17:27:48,358 - WARNING - This is a warning message.
+2025-05-09 17:27:48,358 - ERROR - This is an error message.
+2025-05-09 17:27:48,358 - INFO - Logging with rotation!
+2025-05-09 17:31:17,225 - INFO - This is an info message.
+2025-05-09 17:31:17,226 - WARNING - This is a warning message.
+2025-05-09 17:31:17,226 - ERROR - This is an error message.
+2025-05-09 17:31:17,226 - INFO - Logging with rotation!
+2025-05-09 17:31:58,544 - INFO - This is an info message.
+2025-05-09 17:31:58,544 - WARNING - This is a warning message.
+2025-05-09 17:31:58,544 - ERROR - This is an error message.
+2025-05-09 17:31:58,544 - INFO - Logging with rotation!
+2025-05-09 17:32:22,769 - INFO - This is an info message.
+2025-05-09 17:32:22,769 - WARNING - This is a warning message.
+2025-05-09 17:32:22,770 - ERROR - This is an error message.
+2025-05-09 17:32:22,770 - INFO - Logging with rotation!
+2025-05-09 17:32:43,619 - INFO - This is an info message.
+2025-05-09 17:32:43,619 - WARNING - This is a warning message.
+2025-05-09 17:32:43,619 - ERROR - This is an error message.
+2025-05-09 17:32:43,620 - INFO - Logging with rotation!
+2025-05-09 17:39:43,812 - INFO - This is an info message.
+2025-05-09 17:39:43,812 - WARNING - This is a warning message.
+2025-05-09 17:39:43,812 - ERROR - This is an error message.
+2025-05-09 17:39:43,813 - INFO - Logging with rotation!
+2025-05-09 17:39:53,561 - INFO - This is an info message.
+2025-05-09 17:39:53,561 - WARNING - This is a warning message.
+2025-05-09 17:39:53,562 - ERROR - This is an error message.
+2025-05-09 17:39:53,562 - INFO - Logging with rotation!
+2025-05-09 17:40:25,748 - INFO - This is an info message.
+2025-05-09 17:40:25,748 - WARNING - This is a warning message.
+2025-05-09 17:40:25,748 - ERROR - This is an error message.
+2025-05-09 17:40:25,748 - INFO - Logging with rotation!
+2025-05-09 17:41:40,882 - INFO - This is an info message.
+2025-05-09 17:41:40,882 - WARNING - This is a warning message.
+2025-05-09 17:41:40,882 - ERROR - This is an error message.
+2025-05-09 17:41:40,882 - INFO - Logging with rotation!
+2025-05-09 17:58:48,369 - INFO - This is an info message.
+2025-05-09 17:58:48,369 - WARNING - This is a warning message.
+2025-05-09 17:58:48,370 - ERROR - This is an error message.
+2025-05-09 17:58:48,370 - INFO - Logging with rotation!
+2025-05-09 17:59:01,006 - INFO - This is an info message.
+2025-05-09 17:59:01,006 - WARNING - This is a warning message.
+2025-05-09 17:59:01,006 - ERROR - This is an error message.
+2025-05-09 17:59:01,006 - INFO - Logging with rotation!
+2025-05-09 18:01:22,522 - INFO - This is an info message.
+2025-05-09 18:01:22,522 - WARNING - This is a warning message.
+2025-05-09 18:01:22,522 - ERROR - This is an error message.
+2025-05-09 18:01:22,522 - INFO - Logging with rotation!
+2025-05-09 18:07:33,834 - INFO - This is an info message.
+2025-05-09 18:07:33,835 - WARNING - This is a warning message.
+2025-05-09 18:07:33,835 - ERROR - This is an error message.
+2025-05-09 18:07:33,835 - INFO - Logging with rotation!
+2025-05-09 18:24:24,841 - INFO - This is an info message.
+2025-05-09 18:24:24,841 - WARNING - This is a warning message.
+2025-05-09 18:24:24,841 - ERROR - This is an error message.
+2025-05-09 18:24:24,841 - INFO - Logging with rotation!
+2025-05-09 18:29:09,600 - INFO - This is an info message.
+2025-05-09 18:29:09,600 - WARNING - This is a warning message.
+2025-05-09 18:29:09,600 - ERROR - This is an error message.
+2025-05-09 18:33:43,054 - INFO - This is an info message.
+2025-05-09 18:33:43,054 - WARNING - This is a warning message.
+2025-05-09 18:33:43,054 - ERROR - This is an error message.
+2025-05-09 18:34:18,349 - INFO - This is an info message.
+2025-05-09 18:34:18,349 - WARNING - This is a warning message.
+2025-05-09 18:34:18,349 - ERROR - This is an error message.
+2025-05-09 19:19:33,303 - INFO - This is an info message.
+2025-05-09 19:19:33,304 - WARNING - This is a warning message.
+2025-05-09 19:19:33,304 - ERROR - This is an error message.
+2025-05-09 23:09:32,038 - INFO - This is an info message.
+2025-05-09 23:09:32,038 - WARNING - This is a warning message.
+2025-05-09 23:09:32,038 - ERROR - This is an error message.
+2025-05-09 23:15:05,290 - INFO - This is an info message.
+2025-05-09 23:15:05,291 - WARNING - This is a warning message.
+2025-05-09 23:15:05,291 - ERROR - This is an error message.
+2025-05-09 23:21:05,336 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-09 23:21:05,336 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-09 23:23:31,602 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-09 23:23:31,602 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-09 23:23:31,603 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-09 23:23:31,603 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-09 23:23:48,084 - INFO - 127.0.0.1 - - [09/May/2025 23:23:48] "POST /auth HTTP/1.1" 200 -
+2025-05-09 23:23:48,084 - INFO - 127.0.0.1 - - [09/May/2025 23:23:48] "POST /auth HTTP/1.1" 200 -
+2025-05-09 23:25:01,314 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-09 23:25:01,314 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-09 23:25:01,314 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-09 23:25:01,314 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-09 23:25:07,477 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-09 23:25:07,477 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-09 23:25:07,477 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-09 23:25:07,477 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-09 23:26:09,653 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-09 23:26:09,653 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-09 23:26:09,654 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-09 23:26:09,654 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-09 23:27:47,087 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-09 23:27:47,087 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-09 23:27:47,087 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-09 23:27:47,087 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-09 23:27:54,887 - INFO - 127.0.0.1 - - [09/May/2025 23:27:54] "POST /auth HTTP/1.1" 200 -
+2025-05-09 23:27:54,887 - INFO - 127.0.0.1 - - [09/May/2025 23:27:54] "POST /auth HTTP/1.1" 200 -
+2025-05-09 23:29:28,738 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-09 23:29:28,738 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-09 23:29:28,738 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-09 23:29:28,738 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-09 23:37:17,206 - INFO - 127.0.0.1 - - [09/May/2025 23:37:17] "GET /users HTTP/1.1" 200 -
+2025-05-09 23:37:17,206 - INFO - 127.0.0.1 - - [09/May/2025 23:37:17] "GET /users HTTP/1.1" 200 -
+2025-05-09 23:37:33,201 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-09 23:37:33,201 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-09 23:37:33,202 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-09 23:37:33,202 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-09 23:37:35,561 - INFO - 127.0.0.1 - - [09/May/2025 23:37:35] "GET /users HTTP/1.1" 200 -
+2025-05-09 23:37:35,561 - INFO - 127.0.0.1 - - [09/May/2025 23:37:35] "GET /users HTTP/1.1" 200 -

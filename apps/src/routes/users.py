@@ -7,11 +7,10 @@ from datetime import datetime, timedelta
 from bson import ObjectId
 from bson.errors import InvalidId
 
-
-from database import db
+from database.repository import flask_task_repository, flask_user_repository
 from schema.users import UserSchema as USchema, UserLoginSchema
 from auth.userAuth import token_required, check_admin
-from libs.utils.config import (
+from libs.utils.config.config import (
     YOUR_SECRET_KEY
 )
 # from app import app
@@ -25,7 +24,7 @@ class UserRoutes(MethodView):
     @token_required
     @user_blp.response(200, USchema(many=True))
     def get(self):
-        user = db.user_db.find({})
+        user = flask_user_repository.find_many({})
         userList = []
         if not user:
             return jsonify({"message": "No users found"}), 404
@@ -45,7 +44,7 @@ class UserRoutes(MethodView):
            return jsonify({"message": "No input data provided"}), 400
         try:
             
-            if db.user_db.find_one({"email": data.get('email')}):
+            if flask_user_repository.find_one({"email": data.get('email')}):
                 return jsonify({"message": "User already exists"}), 400
             
             created_at = datetime.utcnow()
@@ -55,7 +54,7 @@ class UserRoutes(MethodView):
             hashed_password = generate_password_hash(plain_password)
             data['password'] = hashed_password
             
-            user = db.user_db.insert_one(data)
+            user = flask_user_repository.insert_one(data)
             data['_id'] = str(user.inserted_id) 
             
             return jsonify(data), 201
@@ -79,12 +78,12 @@ class UserRoutesSpecific(MethodView):
         except InvalidId:
             return jsonify({"message": "Invalid user ID format"}), 400
 
-        result = db.user_db.update_one({"_id": object_id}, {"$set": data})
+        result = flask_user_repository.update_one({"_id": object_id}, {"$set": data})
 
         if result.matched_count == 0:
             return jsonify({"message": "User not found"}), 404
 
-        user = db.user_db.find_one({"_id": object_id})
+        user = flask_user_repository.find_one({"_id": object_id})
         user['_id'] = str(user['_id'])
         return user, 200
     
@@ -96,7 +95,7 @@ class UserRoutesSpecific(MethodView):
         except InvalidId:
             return jsonify({"message": "Invalid user ID format"}), 400
 
-        result = db.user_db.delete_one({"_id": object_id})
+        result = flask_user_repository.delete_one({"_id": object_id})
         if result.deleted_count == 0:
             return jsonify({"message": "User not found"}), 404
 
@@ -118,7 +117,7 @@ class UserAuthRoute(MethodView):
                 if not email or not password:
                     return jsonify({'message': 'email and password are required'}), 400
 
-                user = db.user_db.find_one({'email': email})
+                user = flask_user_repository.find_one({'email': email})
 
                 if not user:
                     return jsonify({'message': 'User not found'}), 404
@@ -128,7 +127,7 @@ class UserAuthRoute(MethodView):
             
                 token = jwt.encode({'public_id': str(user['_id']), 'exp': datetime.utcnow() + timedelta(minutes=30)}, YOUR_SECRET_KEY)
                 
-                db.user_db.update_one({'_id': user['_id']}, {'$set': {'token': token}})
+                flask_user_repository.update_one({'_id': user['_id']}, {'$set': {'token': token}})
                 
                 return jsonify({'token': token}), 200
         except Exception as e:
