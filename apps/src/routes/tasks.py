@@ -15,7 +15,6 @@ from libs.utils.config import (
 )
 # from app import app
 
-
 task_blp = Blueprint("tasks", __name__, description="Operations on tasks")
 
 @task_blp.route("/tasks", methods=["GET", "POST"])
@@ -66,7 +65,6 @@ class TaskRoutes(MethodView):
 
             
             data['created_by'] = current_user['email']
-            
             
             result = flask_task_repository.insert_one(data)
             flask_user_repository.update_one({"email": assigned_email}, {"$push": {"tasks": str(result.inserted_id)}})
@@ -140,7 +138,7 @@ class UserTask(MethodView):
                 object_id = ObjectId(public_id)
         except Exception as e:
                 return jsonify({'message': 'Invalid public_id format'}), 400
-        print("Object ID:", object_id)    
+
         current_user = flask_user_repository.find_one({"_id": object_id})   
         
         if not current_user:
