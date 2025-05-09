@@ -23,8 +23,6 @@ def hello_world():
 app.register_blueprint(user_blp)
 app.register_blueprint(task_blp)
 
-
-
 if __name__ == '__main__':
     # logging.basicConfig(filename="flask_app.log", level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
     
